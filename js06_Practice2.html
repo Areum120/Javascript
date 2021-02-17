@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>2번 정확한 암호 입력</title>
+</head>
+<body>
+
+<h3>2번정확한 암호 입력</h3>
+<hr>
+<div id = "result"></div>
+<script>
+var result = document.getElementById("result");
+
+function promptEX() {
+
+	//parint는 숫자 0216이 아닌 216으로 인식
+	console.log(0216)//테스트
+	
+	while(prompt("정확한 암호를 입력하세요.","") != '0216')//일반 숫자 0216으로 넣으면 142, 즉 앞에 붙은 0 때문에 다른 숫자로 인식
+
+	//계속 물어보는 기능 추가하기 
+	//if, break, prompt 정의 등 안써도 됨
+}
+</script>
+	<button onclick="promptEX()">암호입력</button>
+</body>
+</html>

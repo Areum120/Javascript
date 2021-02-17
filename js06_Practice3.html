@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>3번 요일 입력하기</title>
+</head>
+<body>
+<h3>3번 요일 입력하기</h3>
+<hr>
+<script>
+
+//console.log(f3());
+
+function f3(day){//함수는 입력, 연산, 출력 기능 중 연산만 들어가야 함
+	switch(day) 
+	{
+		case "월":
+		case "화":
+		case "수":
+		case "목":
+		case "금":
+			return "수업";
+			break;
+		case "토":
+		case "일":
+			return "휴일";
+			break;	
+		default :
+			return day + "는 없습니다.";
+		}
+}
+	
+</script>
+</head>
+<body>
+
+
+<script>
+document.write(f3(prompt("요일을 입력하세요(ex 월)", "")));
+</script>
+
+</body>
+</html>

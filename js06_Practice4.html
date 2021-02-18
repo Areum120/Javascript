@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>4번 인원수 총 몸무게와 평균</title>
+
+
+</head>
+<body>
+<h3>4번 인원수 총 몸무게와 평균</h3>
+<hr>
+<script>
+
+//console.log(peoples);
+
+//prompt 사용하여 인원수 입력
+//Array()를 사용하여 해당 인원의 몸무게 추가
+//해당 인원의 몸무게 총합과 평균 출력
+	
+
+
+
+	var people = new Array();//사람 수 배열 생성
+	var peopleWeight = new Array();//몸무게 배열 생성
+	
+	//var wrandom = Math.random();//몸무게 랜덤 난수
+	
+	
+	do {
+		
+		input = prompt("인원 수 입력",0);//prompt 사용하여 인원수 입력
+		people.push(input); //인원 수 빈배열 추가
+		
+		//총몸무게
+		var WeightTotal = input*Math.floor((Math.random()*(80-40))+40);//( Math.random () * (최대값 - 최소값) ) + 최소값
+		peopleWeight.push(WeightTotal);//인원의 몸무게 빈 배열에 추가
+		console.log(WeightTotal);
+		
+	}	while(input==0);//while이 참일 때까지 반복1번 입력 후 창이 꺼짐
+	
+	people.pop();
+	
+	for (i=0; i<peopleWeight.length; i++){
+		console.log(peopleWeight[i]);
+
+		document.write("총 몸무게는"+peopleWeight[i]+"kg 입니다.");//해당 인원의 몸무게 총합 출력
+		document.write("몸무게 평균은"+peopleWeight[i]/input+"kg 입니다.");//해당 인원의 몸무게 평균 출력
+		
+	}
+
+
+</script>
+
+
+</body>
+</html>

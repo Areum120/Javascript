@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>식빵고양이 homepage</title>
+
+<style>
+
+
+div {
+	border : 3px solid #FF28A7;
+	color : blue;
+	background : #FFDCFF;
+}
+
+
+body{
+background-color:#FFE3EE;
+color:000000;
+text-align:center;
+font-size: 18px
+
+}
+
+
+h1{
+
+	color:#FF28A7;
+	text-align:center;
+	font-size: 18px
+	height: 30px;
+
+}
+
+
+h2{
+	background-color:#CC99FF;
+	color:#330066;
+	text-align:center;
+	font-size: 20px
+	height: 30px;
+
+}
+
+#menubar {
+	background : #FF5675;
+	
+}
+#menubar ul { /* 여백과 패딩 모두 0 */
+
+	margin : 0;
+	padding : 300;
+    height: 40px;
+	width : 800px; /* 모든 아이템(<li>)을 한 줄에 품을 수 있는 폭 */
+	
+   
+}
+#menubar ul li {
+
+	display : inline-block; /* 새 줄로 넘어가지 않게 */
+	list-style-type : none; /* 마커 삭제 */
+	padding : 0px 15px; /* top=bottom=0, left=right=15px */ 
+	
+	line-height: 20px; /* 글씨 가운데로 오도록 설정하기 위해 높이 정하기*/
+	vertical-align: middle; /* 세로 정렬을 가운데로 설정*/ 
+	text-align: center;  /* 글씨 정렬 가운데로 설정*/
+
+	
+}
+#menubar ul li a {
+	color : white;
+  	text-decoration : none; /* 링크 보이지 않게 */
+}
+#menubar ul li a:hover {
+ 	color : violet;  /* 마우스 올라 갈 때 색 */
+}
+
+
+#fixed {
+	position : fixed;
+	bottom : 10px;
+	right : 10px;
+	width : 100px;
+	padding : 5px;
+	background : #CD1F48;
+	color : white;
+}
+
+</style>
+<script>
+
+//이미지 출력
+function changeImage() {
+	var sel = document.getElementById("sel");
+	var img = document.getElementById("myImg");
+	img.onload = function () {
+		 // 이미지 크기 출력
+	 	var mySpan = document.getElementById("mySpan");
+		mySpan.innerHTML = img.width + "x" + img.height;
+	}
+	var index= sel.selectedIndex; // 선택된 옵션 인덱스
+	img.src = sel.options[2].value; // <option>의 value 속성
+	// 이미지 로딩 시작, 완료 후 onload 리스너 호출
+}
+
+
+
+</script>
+
+
+</head>
+	<body onload="changeImage()">
+	<h3>여기는 식빵고양이 홈페이지입니다</h3>
+	<hr>
+	
+	<nav id="menubar">
+		<ul>
+			<li><a href="#">Home</a></li>
+			<li><a href="#">Profile</a></li>
+			<li><a href="#">Programming Study</a></li>
+			<li><a href="https://catloaf.tistory.com">개인 블로그</a></li>
+			<li><a href="https://github.com/areum120">Github</a></li>
+			<li><a href="#">Contact</a></li>
+		</ul>
+	</nav>
+	
+	<hr>
+	
+	<h1>Self Introduce </h1>
+	<p><br><br> 안녕하세요. 마케터로 근무하다 <div style="display:inline">데이터분석가</div>가 되기 위해 전직 준비 중입니다. <br><br> 
+	현재는 플레이데이터에서 인공지능 관련 SW 개발자 양성과정 수업을 듣고 있습니다. <br><br><br><br>
+	
+	
+	
+	<form>
+	<select id="sel" onchange="changeImage()">
+		<option value="media/cat1.jpg">식빵고양이
+		<option value="media/cat2.jpeg">식빵고양이2
+		<option value="media/cat3.jpg">정글냥이
+	</select>
+	<span id="mySpan">이미지 크기</span>
+	</form>
+	<p><img id="myImg" src="media/cat.jpg" alt="."></p>
+	
+	<hr>
+	
+	<h2>식빵 고양이 블로그 안내 </h2>
+	<p> <a href="https://blog.naver.com/dkfma1201">네이버블로그</a>는 일상 관련 블로그입니다.<br><br>
+		<a href="https://catloaf.tistory.com">티스토리 블로그</a>는 프로그래밍 관련 블로그입니다. <br><br>
+	
+	</p>
+	<div id="fixed"><a href = "https://github.com/areum120"> 식빵고양이 깃허브 바로가기</a>
+
+</body>
+</html>

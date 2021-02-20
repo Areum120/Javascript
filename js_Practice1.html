@@ -1,0 +1,40 @@
+<!DOCTYPE html> 
+<html> 
+<head>
+<meta charset="UTF-8">
+<title>버튼 클릭하면 전구 on/off</title></head>
+	<style>
+		
+		#b1 {background:lightyellow; left :50px; top : 10px; }
+		#b2 {background:lightyegray; left :150px; top : 10px; }
+	</style>
+<body>
+	<h3>What Can JavaScript Do?</h3>
+	<button id = "b1" onclick="changeOn()">전구켜기</button>
+	<img id="img" src="media\offlight.png" style="width:60px">
+
+	<button id = "b2" onclick="changeOff()">전구끄기</button>
+<script>
+	
+	changeOff(){
+	var tag1 = document.getElementById('img');
+	var switchOff = document.getElementById('b2');
+	switchOff.style.background="lightgray";
+	switchOn.style.background="lightyellow"
+	tag1.src='offlight.png';
+	}
+	
+	
+	changeOn(){
+		var tag1 = document.getElementById('img2');
+		var switchOn = document.getElementById('b1');
+		var switchOff = document.getElementById('b2');
+		switchOff.style.background="lightgray";
+		switchOn.style.background="lightyellow";
+		tag1.src='media\onlight.png';
+	}
+	
+</script>
+</body>
+</html>
+

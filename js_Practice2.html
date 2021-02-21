@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<body>
+   <h3> 행운번호를 추천합니다. </h3><hr>   
+   <button onclick="luckyNumber();">행운번호 생성</button> 
+<script> 
+
+	//1~45번 5개 숫자, 1개 숫자는 보너스, 단 6개는 다 다른 숫자가 나와야 함, 중복 제거
+   function luckyNumber() { 
+      var num = new Array();//배열 생성   
+      
+      for (i=1; i<=5; i++) { 
+       	num[i] = Math.floor((Math.random()*45)+1);//5개 숫자 처음 랜덤값 생성해서 차례로 저장
+    	
+        for(j=1; j<=i; j++) //현재 배열 값과 (i번째), 그전 배열들의 값(i-1=j)을 비교
+          if(num[j]==num[i]) {//[j][i]는 인덱스번호임, 인덱스 번호가 서로 같을 떄(다를 때까지 반복)
+        	  num[j]= Math.floor((Math.random()*45)+1);//중복 제거하기 위해 값을 새로 생성
+          }
+      }         
+      
+      num[5]= Math.floor((Math.random()*45)+1);//보너스 번호 생성 //생각이 안났음...보너스 번호도 따로 생성해야 함, 앞서 생성헸던 것처럼
+      for (i=1; j<=5; i++) {//보너스 번호 중복 제거, 앞서 처리와 마찬가지
+        if(num[j]==num[i]){
+        	num[i]= Math.floor((Math.random()*45)+1);
+        }    
+      	
+      }      
+      
+      
+      document.write("<h3> 행운 번호</h3><hr>");   
+      for (i=1; i<=5; i++){
+    	  document.write(num[i]+",");
+      }//최종 배열값을 출력하기 위한 반복문
+      document.write("<br>보너스 번호! : " + num[5]); 
+   } 
+</script>
+</body>
+</html>

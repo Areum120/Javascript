@@ -4,37 +4,54 @@
 <meta charset="UTF-8">
 <title>버튼 클릭하면 전구 on/off</title></head>
 	<style>
-		
-		#b1 {background:lightyellow; left :50px; top : 10px; }
-		#b2 {background:lightyegray; left :150px; top : 10px; }
+		#b1 {background:lightyellow; left :50px; top : 10px;}/*전구 켜기 버튼 css속성*/
+		#b2 {background:lightgray; left :150px; top : 10px; }/*전구 끄기 버튼 css속성*/
+
 	</style>
+
+	<script>
+	
+	//console.log(changeOn());
+	
+		//console.log(tag1);
+	
+		function changeOn() {
+			
+			//<img id="img" src="media\offlight.png" style=width:100px;>
+			//<img id="img2" src="media\onflight.png" style=width:100px;>
+			
+			var tag1 = document.getElementById("img");
+			var switchOn = document.getElementById("b1");
+			switchOn.style.background="lightgray";
+			tag1.src="./media/onlight.png";//이미지 변경
+			var switchOff = document.getElementById("b2");//전구끄기 버튼 색변경
+			switchOff.style.background="lightyellow";	
+		}	
+		//첫번째 문제 chnageon() 함수  function을 안써서 오류
+		//두번째 문제 전구켜기 이미지가 안나옴 "media\onlight.png"->"./media/onlight.png"로 변경했더니 인식 됨.
+	
+		function changeOff() {
+		
+			var tag1 = document.getElementById("img");
+			var switchOff = document.getElementById("b2");
+			switchOff.style.background="lightgray";		
+			tag1.src="./media/offlight.png";//다시 이미지 변경
+			var switchOn = document.getElementById('b1');//전구켜기 색변경
+			switchOn.style.background="lightyellow";
+		}
+/*
+	<button id = "b1" onclick="changeOn()">전구켜기</button>
+	<img id="img" src="media\offlight.png" style="width:100px">
+	<button id = "b2" onclick="changeOff()">전구끄기</button>
+*/
+	</script>
 <body>
 	<h3>What Can JavaScript Do?</h3>
-	<button id = "b1" onclick="changeOn()">전구켜기</button>
-	<img id="img" src="media\offlight.png" style="width:60px">
 
+	
+	<button id = "b1" onclick="changeOn()">전구켜기</button>
+	<img id="img" src="media\offlight.png" style=width:100px;>
 	<button id = "b2" onclick="changeOff()">전구끄기</button>
-<script>
-	
-	changeOff(){
-	var tag1 = document.getElementById('img');
-	var switchOff = document.getElementById('b2');
-	switchOff.style.background="lightgray";
-	switchOn.style.background="lightyellow"
-	tag1.src='offlight.png';
-	}
-	
-	
-	changeOn(){
-		var tag1 = document.getElementById('img2');
-		var switchOn = document.getElementById('b1');
-		var switchOff = document.getElementById('b2');
-		switchOff.style.background="lightgray";
-		switchOn.style.background="lightyellow";
-		tag1.src='media\onlight.png';
-	}
-	
-</script>
 </body>
 </html>
 

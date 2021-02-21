@@ -1,0 +1,35 @@
+<!DOCTYPE html> 
+<html> 
+<head>
+<meta charset="UTF-8">
+<title>버튼 클릭시 이미지 변경 연습</title>
+	<style>
+		#box{
+		width: 300px;
+		height: 100px;
+		line-height: 100px;
+		color: #fff;
+		background-color: gray;
+		text-align: center;
+		}
+	</style>
+	
+	<script>
+		function bgRed(){
+			var box = document.getElementById("box");//box 스타일 가져오기
+			box.style.backgroundColor = "red"; //빨간색 박스로 바꾸기
+		}
+		
+		function bgGreen(){
+			var box = document.getElementById("box");//box 스타일 가져오기
+			box.style.backgroundColor = "green";//초록색박스로 바꾸기
+		}
+	</script>
+</head>
+<body>
+	<input type="button" value ="빨강" onclick="bgRed()">
+	<input type="button" value="녹색" onclick="bgGreen()"><br><br>
+	<div id="box"> Hello~</div>
+</body>
+</html>
+

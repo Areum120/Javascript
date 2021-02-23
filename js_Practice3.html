@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>버튼/합계 계산하기</title>
+<script>
+
+
+function calc() {
+
+	var c1 = document.getElementById("c1").value;
+	var c2 = document.getElementById("c2").value;
+	var c3 = document.getElementById("c3").value;
+	
+	var sum=0;
+	
+	if(c1){
+		sum+=10000;
+	}else if(c2){
+		sum+=10000+30000;
+	}else if(c3){
+		sum+=10000+30000+80000;
+	
+	}
+	
+	//c1을 클릭하면 10000원을 sum에 더한다.
+	//c2을 클릭하면 30000
+	//c3을 클릭하면 80000
+	//c1+c2를 클릭하면 10000+30000
+	//c1+c3을 클릭하면 10000+80000
+	//c1+c2+c3을 클릭하면 10000+30000+80000;
+	
+	
+
+
+	document.getElementById("sumtext").value = sum;
+}
+
+/*
+<input type="checkbox" name="hap" value="10000"
+	onclick="calc(this)">모자 1만원
+<input type="checkbox" name="shose" value="30000"
+	onclick="calc(this)">구두 3만원
+<input type="checkbox" name="bag" value="80000"
+	onclick="calc(this)">명품가방 8만원<br>
+	*/
+</script>
+</head>
+<body>
+<h3>선택된 물품 버튼/합계 계산하기</h3>
+<hr>
+<form>
+
+	<input type = "button" id="c1" value="모자 1만원" onclick="calc()">
+	<input type = "button" id="c2" value="구두 3만원" onclick="calc()">
+	<input type = "button" id="c3" value="명품가방 8만원" onclick="calc()">
+
+	총 합계는 <input type="text" id="sumtext" value="0" >
+</form>
+</body>
+</html>

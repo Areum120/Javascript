@@ -5,57 +5,31 @@
 <title>버튼/합계 계산하기</title>
 <script>
 
+var sum = 0;//함수 안에 지역변수로 선언하면 0으로 계속 초기화돼서 sum+=으로 더해지지 않는 거였음.
 
-function calc() {
-
-	var c1 = document.getElementById("c1").value;
-	var c2 = document.getElementById("c2").value;
-	var c3 = document.getElementById("c3").value;
+function calc(button) {
 	
-	var sum=0;
+	if(button)
+		sum+= parseInt(button.value);//parseInt를 안하면 값이 더하기가 안되고 옆에 붙여넣기가 됨		
+	else
+		sum-= button.value;
 	
-	if(c1){
-		sum+=10000;
-	}else if(c2){
-		sum+=10000+30000;
-	}else if(c3){
-		sum+=10000+30000+80000;
-	
-	}
-	
-	//c1을 클릭하면 10000원을 sum에 더한다.
-	//c2을 클릭하면 30000
-	//c3을 클릭하면 80000
-	//c1+c2를 클릭하면 10000+30000
-	//c1+c3을 클릭하면 10000+80000
-	//c1+c2+c3을 클릭하면 10000+30000+80000;
-	
-	
-
-
 	document.getElementById("sumtext").value = sum;
 }
 
-/*
-<input type="checkbox" name="hap" value="10000"
-	onclick="calc(this)">모자 1만원
-<input type="checkbox" name="shose" value="30000"
-	onclick="calc(this)">구두 3만원
-<input type="checkbox" name="bag" value="80000"
-	onclick="calc(this)">명품가방 8만원<br>
-	*/
+//this는 이 버튼을 클릭했을 때 참조값
+//function()에 들어갈 변수이름은 버튼 클릭 시 참조값
+
 </script>
 </head>
-<body>
+<body class="body">
 <h3>선택된 물품 버튼/합계 계산하기</h3>
 <hr>
-<form>
-
-	<input type = "button" id="c1" value="모자 1만원" onclick="calc()">
-	<input type = "button" id="c2" value="구두 3만원" onclick="calc()">
-	<input type = "button" id="c3" value="명품가방 8만원" onclick="calc()">
-
-	총 합계는 <input type="text" id="sumtext" value="0" >
-</form>
+	<form>
+		<button type = "button" id="c1" value="10000" onclick="calc(this)">모자 1만원</button>
+		<button type = "button" id="c2" value="30000" onclick="calc(this)">구두 3만원</button>
+		<button type = "button" id="c3" value="80000" onclick="calc(this)">명품가방 8만원</button>
+		총 합계는 <input type="text" id="sumtext" value="" >
+	</form>
 </body>
 </html>

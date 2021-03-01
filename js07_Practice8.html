@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>8번 </title>
+<script>
+
+//- 7-09,7-10,7-11 책 3권과 관련된 객체 3가지 방법으로 생성(속성 3가지 이상, 메소드 2가지 이상)
+//- 1.new Object() 사용==>확인을 위한 출력 내용
+//- 2.리터럴 표기법 사용==>확인을 위한 출력 내용
+//- 3.프로토타입 사용==>확인을 위한 출력 내용
+
+
+//메소드로 활용할 3개의 함수 작성
+//책 빌려주기 객체
+//속성:  자산 : asset 책구매가격 : bookprice 책빌리는 가격:lendmoney
+//메소드 : assetsearch(), buybook(), lend()
+
+
+/*1번
+//메소드 사용할 함수 작성
+function lend(lendmoney){
+	this.asset+= lendmoney;
+}
+function assetsearch(){return this.asset;}//책제목 검색 조회 
+
+function buybook(bookprice){
+	this.asset -= bookprice;
+}
+
+//사용자 객체 만들기
+var lendbook = new Object();
+//프로퍼티 생성 및 초기화
+lendbook.asset = 50000;
+lendbook.bookprice = 12000;
+lendbook.lendmoney=800;
+
+lendbook.lend =lend;
+lendbook.assetsearch=assetsearch;//책정보 입력
+lendbook.buybook=buybook;
+*/
+
+
+/*2번 리터럴표기법 :중괄호 이용
+
+
+var lendbook={
+	asset = 50000;
+	bookprice = 12000;
+	lendmoney=800;
+	
+	function lend(lendmoney){
+		this.asset+= lendmoney;
+	}
+	function assetsearch(){return this.asset;}//책제목 검색 조회 
+
+	function buybook(bookprice){
+		this.asset -= bookprice;
+	}
+}
+*/
+
+//3번 프로토타입 c++, java에서는 클래스라고 함, 자바에서 생성하는 것처럼 생성
+//생성자 함수 작성
+function lendbook(asset, bookprice, lendmoney){
+	this.asset = asset;
+	this.bookprice=bookprice;
+	this.lendmoney=lendmoney;
+//메소드 생성
+
+	this.lend=function(lendmoney){
+	return this.asset;
+}
+	this.buybook=function(bookprice){
+		this.asset -= bookprice;
+	}
+	
+	this.assetsearch=function(){
+		return this.asset;
+	}
+	
+}
+
+
+
+
+</script>
+
+</head>
+<body>
+<script>
+
+
+//3번 new 연산자 사용하여 객체 생성
+//var lendbook=new lendbook(50000,12000,800);
+//객체 활용
+
+document.write("lendbook:");
+document.write(lendbook.booktitle+",");
+document.write(lendbook.asset+",");
+document.write(lendbook.bookprice+",");
+document.write(lendbook.lendmoney+"<br>");
+
+lendbook.lend(700);
+document.write("책을 빌려준 후 남은 자산은"+lendbook.assetsearch()+"입니다.<br>");
+
+lendbook.buybook(3000);
+document.write("책을 구매한 후 남은 자산은 "+lendbook.assetsearch()+"입니다.<br>");
+
+
+</script>
+
+
+</body>
+</html>

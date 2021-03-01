@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>5번 </title>
+
+
+</head>
+<body>
+<h3>5번 </h3>
+<hr>
+<script>
+
+/*prompt 반복 호출하여 7개의 정수 입력하여 배열에 저장 후 입력된 순서대로 출력
+입력된 정수들을 반대로 출력
+입력된 정수들을 정렬하여 출력
+*/
+
+/*첫번째 방법
+	var repeat = new Array();
+
+
+	do {
+		
+		input = prompt("정수 입력",0);
+		repeat.push(input);//입력한 정수 배열에 넣기
+		
+	} while(input!=0);//확인 버튼 누를 때까지 prompt 반복 호출 부분
+	
+	repeat.pop(); // 취소 버튼 누르면서 null값 들어가는데 마지막 값을 제거해주는 것
+
+	for(i=0; i<repeat.length; i++){
+		
+		console.log(repeat[i]);
+	
+	}
+	
+	document.write(repeat.reverse());//입력된 정수 반대로 출력
+	document.write("<br>");//띄어쓰기
+	document.write(repeat.sort());//입력된 정수 정렬하여 출력
+*/
+
+/*두번째 방법*/
+ 
+ 
+ var a=[];//배열 선언
+ 
+ for(i=0; i<7; i++){
+	 a[i]=prompt("정수입력",0);//정수 7개 반복 호출하여 입력
+	 
+ }
+ 
+ document.write("입력된 수의 배열 <br>");
+ document.write(a.sort()+"");
+ 
+ document.write("<hr>");
+ document.write("입력된 수의 역순으로 정렬1 <br>");
+
+ document.write(a.reverse()+""+"<br>");//방법1
+ 
+ document.write("입력된 수의 역순으로 정렬2 <br>");
+ 
+ var reverse=[];//방법2
+ for(i=a.length-1; i>=0; i--){
+	reverse.push(a[i]);
+ }
+ document.write(a+",");
+
+</script>
+
+
+</body>
+</html>

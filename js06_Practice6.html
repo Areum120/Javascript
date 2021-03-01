@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>6번 </title>
+
+
+</head>
+<body>
+<h3>6번</h3>
+<hr>
+<script>
+
+/*prompt를 사용하여 문자열 입력(문자열 입력 *문자 포함)
+*를 기준으로 분할하여 라인별로 출력
+*/
+
+
+var str = prompt("문자열 입력","*포함");
+
+document.write("문자열 입력 출력 확인<br>");
+
+var str2 = str.split("*");
+
+for(i=0; i<str2.length; i++){
+	document.write(str2[i]+"<br>");//출력확인	
+}
+
+
+/*
+var a = "d*f*g*"
+document.write(a.split("*"));
+특수문자인 경우 a.split("\\|") 처럼 구분 문자 앞에 \\ 2개 입력할 것
+*/
+
+//배열을 넣고 propmt로 하면 ypeError: str.split is not a function 에러가 남 array로 설정해서 오류가 남
+
+</script>
+
+
+</body>
+</html>

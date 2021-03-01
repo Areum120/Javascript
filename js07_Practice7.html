@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>7번문제</title>
+</head>
+<body>
+	<script>
+	
+	//1에서 100(포함)까지의 난수 10개 생성
+	//arr이라는 배열에 저장 후 출력
+	//배열에 저장된 수 중 가장 큰 수 출력
+	//가장 큰 수가 짝수일 경우 배경색을 blue 계열로
+	//가장 큰 수가 홀수일 경우 배경색을 red 계열로 
+
+
+		
+	var array = [];
+	
+		for(i=0; i<11; i++){//난수 10개 생성
+			array[i] = Math.floor(Math.random()*100);
+		}
+		
+		//var max = Math.max.apply(null,array);
+		//document.write(max)//방법 1 배열 저장된 수중 가장 큰수 출력
+		
+		for(i=0; i<array.length; i++){//방법2 for 사용
+			if(!maxNum){
+				var maxNum = array[i];//현재 배열값으로 maxnum 지정
+			}
+			if(maxNum<array[i]){//maxNum값과 현재 값을 비교해서 maxNum값을 가장 큰 값으로 유지
+				var maxNum=array[i];
+			}
+		}
+		
+		document.write(maxNum);
+		
+		if(maxNum%2 == 0){//배열 저장된 수 중 가장 큰 수가 짝수
+			document.body.style.backgroundColor = "blue";
+		}else//가장 큰수가 홀수인 경우
+			document.body.style.backgroundColor = "red";
+	
+
+
+	</script>
+</body>
+</html>
